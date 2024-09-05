@@ -9,7 +9,7 @@ A simple Vencord plugin to hopefully avoid ghosting friends..
 
 ## How to install
 
-- [Vencord installation guide](https://docs.vencord.dev/installing/custom-plugins/)
+- [Vencord custom plugins installation guide](https://docs.vencord.dev/installing/custom-plugins/)
 
 
 ### Preview
