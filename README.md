@@ -14,4 +14,4 @@ A simple Vencord plugin to hopefully avoid ghosting friends..
 
 ### Preview
 
-![preview](https://github.com/ve-i/vc-Boo/blob/main/preview/preview.png)
+![preview](https://github.com/ve-i/vc-Boo/blob/main/preview/preview2.png)
