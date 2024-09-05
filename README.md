@@ -15,3 +15,12 @@ A simple Vencord plugin to hopefully avoid ghosting friends..
 ### Preview
 
 ![preview](https://github.com/ve-i/vc-Boo/blob/main/preview/preview2.png)
+
+#
+
+#### To-do (maybe)
+(if ever)
+
+
+- display a ghosty icon onto the "Home"/"Direct Messages" button with a ghosty counter (depressing)(just as friends requests)
+- ran out of idea
