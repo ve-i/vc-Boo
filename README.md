@@ -27,4 +27,4 @@ A simple Vencord plugin to hopefully avoid ghosting friends..
 
 - display a ghosty icon onto the "Home"/"Direct Messages" button with a "ghosty counter" (depressing)(similar to the friend request notifications)
 - actually understand what i'm doing and make it finally coherent
-- ran out of idea
+- ran out of ideas
