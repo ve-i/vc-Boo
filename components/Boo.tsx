@@ -11,8 +11,8 @@ import { React, useEffect, useState, MessageStore, UserStore, useStateFromStores
 import { Message } from "discord-types/general";
 
 import { BooProps } from "../types";
-import IconGhost from "./IconGhost"; // Adjust the path if necessary
-import IconGhostOrange from "./IconGhost-Orange"; // For the orange icon
+import IconGhost from "./IconGhost";
+import IconGhostOrange from "./IconGhost-Orange";
 
 const ChannelWrapperStyles = findByPropsLazy("muted", "subText");
 
