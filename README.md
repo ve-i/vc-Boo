@@ -16,6 +16,9 @@ A simple Vencord plugin to hopefully avoid ghosting friends..
 
 ![preview](https://github.com/ve-i/vc-Boo/blob/main/preview/preview2.png)
 
+- Orange Ghosty: indicates that you probably missed answering a question
+- Other Ghosty: indicates that you are not the last one to have spoken
+
 #
 
 #### To-do (maybe)
