@@ -10,3 +10,8 @@ A simple Vencord plugin to hopefully avoid ghosting friends..
 ## How to install
 
 - [Vencord installation guide](https://docs.vencord.dev/installing/custom-plugins/)
+
+
+### Preview
+
+![preview](https://github.com/ve-i/vc-Boo/blob/main/preview/preview.png)
