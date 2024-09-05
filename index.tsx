@@ -12,7 +12,7 @@ import { BooProps } from "./types";
 
 export default definePlugin({
     name: "Boo",
-    description: "A ghost will appear if you don't answer their DMs",
+    description: "A cute ghost will appear if you don't answer their DMs",
     authors: [{ name: "Vei", id: 239414094799699968n }],
     patches: [
         {
