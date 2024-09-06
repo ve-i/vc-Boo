@@ -14,7 +14,7 @@ import { BooProps } from "../types";
 import IconGhost from "./IconGhost";
 import IconGhostOrange from "./IconGhost-Orange";
 
-const ChannelWrapperStyles = findByPropsLazy("muted", "subText");
+const ChannelWrapperStyles = findByPropsLazy("muted", "wrapper");
 
 export default function Boo({channel}: BooProps) {
 
@@ -47,8 +47,8 @@ export default function Boo({channel}: BooProps) {
 
     return (
         <div
-            className={ChannelWrapperStyles.subText}
-            style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+            className={ChannelWrapperStyles.wrapper}
+            style={{ /* Custom styling if necessary */}}
         >
             {/* Conditionally render the ghost icon based on the message */}
             {!isCurrentUser && (
