@@ -7,7 +7,7 @@
 import "./styles.css";
 
 import { findByPropsLazy } from "@webpack";
-import { React, useEffect, useState, MessageStore, UserStore, useStateFromStores } from "@webpack/common";
+import { MessageStore, React, useEffect, UserStore, useState, useStateFromStores } from "@webpack/common";
 import { Message } from "discord-types/general";
 
 import { BooProps } from "../types";
@@ -16,19 +16,15 @@ import IconGhostOrange from "./IconGhost-Orange";
 
 const ChannelWrapperStyles = findByPropsLazy("muted", "subText");
 
-export default function Boo(props: BooProps) {
-    const { channel, channel_url } = props;
-    if (!channel && !channel_url) return null;
+export default function Boo({channel}: BooProps) {
 
-    const channelId = channel ? channel.id : channel_url.split("/").pop() as string;
+    const { id } = channel;
 
     // Get the current user's ID
     const currentUserId = useStateFromStores([UserStore], () => UserStore.getCurrentUser()?.id);
-    if (!currentUserId) return null;
 
     // Fetch the last message
-    const lastMessage: Message = useStateFromStores([MessageStore], () => MessageStore.getMessages(channelId)?.last());
-    if (!lastMessage) return null;
+    const lastMessage: Message = useStateFromStores([MessageStore], () => MessageStore.getMessages(id)?.last());
 
     // State to track if the last message was from the current user and if it contains a question mark
     const [isCurrentUser, setIsCurrentUser] = useState<boolean>(false);
@@ -47,6 +43,7 @@ export default function Boo(props: BooProps) {
             setContainsQuestionMark(false); // Reset if the last message is from the current user
         }
     }, [lastMessage, currentUserId]);
+    if (!currentUserId || !lastMessage) return null;
 
     return (
         <div
