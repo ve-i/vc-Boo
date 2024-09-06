@@ -27,13 +27,13 @@ export default function Boo({channel}: BooProps) {
     const lastMessage: Message = useStateFromStores([MessageStore], () => MessageStore.getMessages(id)?.last());
 
     // State to track if the last message was from the current user and if it contains a question mark
-    const [isCurrentUser, setIsCurrentUser] = useState<boolean>(false);
+    const [isCurrentUser, setIsCurrentUser] = useState<boolean | null>(null);
     const [containsQuestionMark, setContainsQuestionMark] = useState<boolean>(false);
+    const [isDataProcessed, setIsDataProcessed] = useState(false);
 
     // Update state based on message content
     useEffect(() => {
         if (!lastMessage || !currentUserId) return;
-
         const lastIsCurrentUser = lastMessage.author.id === currentUserId;
         setIsCurrentUser(lastIsCurrentUser);
 
@@ -42,15 +42,16 @@ export default function Boo({channel}: BooProps) {
         } else {
             setContainsQuestionMark(false); // Reset if the last message is from the current user
         }
+        setIsDataProcessed(true);
     }, [lastMessage, currentUserId]);
-    if (!currentUserId || !lastMessage) return null;
+    if (!isDataProcessed || !currentUserId || !lastMessage) return null;
 
     return (
         <div
             className={ChannelWrapperStyles.wrapper}
-            style={{ /* Custom styling if necessary */}}
+            style={{/* Custom styling if necessary */}}
         >
-            {/* Conditionally render the ghost icon based on the message */}
+            {}
             {!isCurrentUser && (
                 <>
                     {containsQuestionMark ? (
