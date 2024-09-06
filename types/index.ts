@@ -8,5 +8,4 @@ import { Channel } from "discord-types/general";
 
 export interface BooProps {
     channel: Channel;
-    channel_url: string;
 }

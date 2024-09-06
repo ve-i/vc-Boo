@@ -5,6 +5,7 @@
  */
 
 import ErrorBoundary from "@components/ErrorBoundary";
+import { Devs } from "@utils/constants";
 import definePlugin from "@utils/types";
 
 import Boo from "./components/Boo";
@@ -13,22 +14,17 @@ import { BooProps } from "./types";
 export default definePlugin({
     name: "Boo",
     description: "A cute ghost will appear if you don't answer their DMs",
-    authors: [{ name: "Vei", id: 239414094799699968n }],
+    authors: [{ name: "Vei", id: 239414094799699968n }, Devs.sadan],
     patches: [
         {
-            // DMs
-            find: /let{className:[^],focusProps:[^],...[^]}=[^];return\(/,
+            find: "interactiveSelected]",
             replacement: {
-                match: /(?<=\.\.\.([^])[^]*)}=[^];/,
-                replace: `$&
-                    if ($1.children?.props?.children?.[0]?.props?.children?.props)
-                        $1.children.props.children[0].props.children.props.subText = [
-                            $1.children.props.children.splice(0, 0, $self.renderBoo({ channel_url: $1.children.props.children[0].props.to }))
-                        ];
-                `.replace(/\s+/g, "")
+                match: /interactiveSelected.{0,50}children:\[/,
+                replace: "$&$self.renderBoo(arguments[0]),"
             }
-        },
+        }
     ],
+
     renderBoo: (props: BooProps) => {
         return (
             <ErrorBoundary noop>
