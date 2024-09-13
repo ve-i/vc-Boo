@@ -47,20 +47,10 @@ export default function Boo({channel}: BooProps) {
     if (!isDataProcessed || !currentUserId || !lastMessage) return null;
 
     return (
-        <div
-            className={ChannelWrapperStyles.wrapper}
-            style={{/* Custom styling if necessary */}}
-        >
-            {}
-            {!isCurrentUser && (
-                <>
-                    {containsQuestionMark ? (
-                        <IconGhostOrange /> // Use the orange ghost if there's a question mark
-                    ) : (
-                        <IconGhost /> // Default ghost icon if no question mark
-                    )}
-                </>
-            )}
-        </div>
+        !isCurrentUser && (
+            <div className={ChannelWrapperStyles.wrapper}>
+                {containsQuestionMark ? <IconGhostOrange /> : <IconGhost />}
+            </div>
+        )
     );
 }
